@@ -1,0 +1,19 @@
+/**
+ * Block counters: module for PrestaShop 1.2-1.6
+ *
+ * @author    zapalm <zapalm@ya.ru>
+ * @copyright (c) 2010-2016, zapalm
+ * @link      http://prestashop.modulez.ru/en/frontend-features/43-block-counters.html The module's homepage
+ * @license   http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
+ */
+
+.stat-counters-block-column {
+    width: 191px;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.stat-counters-block-footer {
+    display: block;
+    float: left;
+}
