@@ -9,6 +9,10 @@
 
 <!-- MODULE: blockcounterz -->
 <div class="stat-counters-block-column">
-    {$stat_counters}
+    {if $psVersion == 1.7}
+        {$stat_counters nofilter}
+    {else}
+        {$stat_counters}
+    {/if}
 </div>
 <!-- /MODULE: blockcounterz -->

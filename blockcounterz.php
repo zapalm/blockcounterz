@@ -84,6 +84,8 @@ class BlockCounterz extends Module
     {
         global $smarty;
 
+        $this->assignCommonVariables();
+
         $smarty->assign(array(
             'stat_counters' => base64_decode(Configuration::get(self::CONF_CONTENT)),
         ));
@@ -93,6 +95,8 @@ class BlockCounterz extends Module
 
     public function hookLeftColumn($params)
     {
+        $this->assignCommonVariables();
+
         return $this->hookRightColumn($params);
     }
 
@@ -100,10 +104,24 @@ class BlockCounterz extends Module
     {
         global $smarty;
 
+        $this->assignCommonVariables();
+
         $smarty->assign(array(
             'stat_counters' => base64_decode(Configuration::get(self::CONF_CONTENT)),
         ));
 
         return $this->display(__FILE__, 'views/templates/hook/footer.tpl');
+    }
+
+    /**
+     * Assign common variables.
+     */
+    private function assignCommonVariables()
+    {
+        global $smarty;
+
+        $smarty->assign(array(
+            'psVersion' => (float)_PS_VERSION_,
+        ));
     }
 }
