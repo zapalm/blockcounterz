@@ -1,4 +1,4 @@
-Block counters: module for PrestaShop 1.2-1.6
+Block counters: module for PrestaShop 1.2-1.7
 =============================================
 
 Description

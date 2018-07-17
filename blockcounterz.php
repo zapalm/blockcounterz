@@ -1,6 +1,6 @@
 <?php
 /**
- * Block counters: module for PrestaShop 1.2-1.6
+ * Block counters: module for PrestaShop 1.2-1.7
  *
  * @author    zapalm <zapalm@ya.ru>
  * @copyright (c) 2010-2016, zapalm
