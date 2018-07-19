@@ -3,8 +3,8 @@ Block counters: module for PrestaShop 1.2-1.7
 
 Description
 ------------
-This is a module for [PrestaShop][4] e-commerce solution (1.2-1.6) that adds a block to display statistics or analytics counters.
-More info: http://prestashop.modulez.ru/en/frontend-features/43-block-counters.html
+This is a module for [PrestaShop][4] e-commerce solution that adds a block to display statistics or analytics counters.
+More info: https://prestashop.modulez.ru/en/frontend-features/43-block-counters.html
 
 Installation & Update
 ------------

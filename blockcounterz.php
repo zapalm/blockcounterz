@@ -1,10 +1,10 @@
 <?php
 /**
- * Block counters: module for PrestaShop 1.2-1.7
+ * Block counters: module for PrestaShop.
  *
- * @author    zapalm <zapalm@ya.ru>
- * @copyright (c) 2010-2016, zapalm
- * @link      http://prestashop.modulez.ru/en/frontend-features/43-block-counters.html The module's homepage
+ * @author    Maksim T. <zapalm@yandex.com>
+ * @copyright 2010 Maksim T.
+ * @link      https://prestashop.modulez.ru/en/frontend-features/43-block-counters.html The module's homepage
  * @license   http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
  */
 
@@ -16,6 +16,9 @@ class BlockCounterz extends Module
 {
     const CONF_CONTENT = 'BLOCKCOUNTERZ_CONTENT';
 
+    /**
+     * @inheritdoc
+     */
     public function __construct()
     {
         $this->name    = 'blockcounterz';
@@ -29,6 +32,9 @@ class BlockCounterz extends Module
         $this->description = $this->l('Adds a block to display stat counters.');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function install()
     {
         $content = base64_encode('<!--noindex-->' . PHP_EOL . '<!--/noindex-->');
@@ -40,6 +46,9 @@ class BlockCounterz extends Module
         ;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function uninstall()
     {
         Configuration::deleteByName(self::CONF_CONTENT);
@@ -47,6 +56,11 @@ class BlockCounterz extends Module
         return parent::uninstall();
     }
 
+    /**
+     * Get module's settings page content.
+     *
+     * @return string
+     */
     public function getContent()
     {
         $output = '';
@@ -75,11 +89,17 @@ class BlockCounterz extends Module
         return $output;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function hookHeader()
     {
         return '<link href="' . $this->_path . 'views/css/main.css" rel="stylesheet">';
     }
 
+    /**
+     * @inheritdoc
+     */
     public function hookRightColumn($params)
     {
         global $smarty;
@@ -93,6 +113,9 @@ class BlockCounterz extends Module
         return $this->display(__FILE__, 'views/templates/hook/column-right.tpl');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function hookLeftColumn($params)
     {
         $this->assignCommonVariables();
@@ -100,6 +123,9 @@ class BlockCounterz extends Module
         return $this->hookRightColumn($params);
     }
 
+    /**
+     * @inheritdoc
+     */
     public function hookFooter($params)
     {
         global $smarty;
