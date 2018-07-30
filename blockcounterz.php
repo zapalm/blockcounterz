@@ -5,15 +5,19 @@
  * @author    Maksim T. <zapalm@yandex.com>
  * @copyright 2010 Maksim T.
  * @link      https://prestashop.modulez.ru/en/frontend-features/43-block-counters.html The module's homepage
- * @license   http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
+ * @license   https://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
  */
 
 if (!defined('_PS_VERSION_')) {
     exit;
 }
 
+/**
+ * @inheritdoc
+ */
 class BlockCounterz extends Module
 {
+    /** Settings option: content */
     const CONF_CONTENT = 'BLOCKCOUNTERZ_CONTENT';
 
     /**
