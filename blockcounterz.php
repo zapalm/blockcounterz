@@ -32,8 +32,8 @@ class BlockCounterz extends Module
 
         parent::__construct();
 
-        $this->displayName = $this->l('Stat counters block');
-        $this->description = $this->l('Adds a block to display stat counters.');
+        $this->displayName = $this->l('JavaScript code addition helper');
+        $this->description = $this->l('Helps to add any JavaScript code, for example, analytic counter, advertisement or other script.');
     }
 
     /**
@@ -82,7 +82,7 @@ class BlockCounterz extends Module
             <form action="' . $_SERVER['REQUEST_URI'] . '" method="post">
                 <fieldset>
                     <legend><img src="' . _PS_ADMIN_IMG_ . 'cog.gif" alt="" title="" />' . $this->l('Settings') . '</legend>
-                    <b>' . $this->l('Stat counters code') . ':</b><br />
+                    <b>' . $this->l('JavaScript code') . ':</b><br />
                     <textarea style="width:100%; height:300px;" name="counters_text">' . base64_decode(Configuration::get(self::CONF_CONTENT)) . '</textarea><br />
                     <center><input type="submit" name="submit_save" value="' . $this->l('Save') . '" class="button" /></center>
                 </fieldset>
