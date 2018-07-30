@@ -1,4 +1,4 @@
-# Categories on the homepage: the module for PrestaShop
+# JavaScript code addition helper: the module for PrestaShop
 
 ## Description
 **The module help to add any JavaScript code, for example, analytic counter, advertisement or other script.**
