@@ -4,7 +4,7 @@
  *
  * @author    Maksim T. <zapalm@yandex.com>
  * @copyright 2010 Maksim T.
- * @link      https://prestashop.modulez.ru/en/frontend-features/43-block-counters.html The module's homepage
+ * @link      https://prestashop.modulez.ru/en/frontend-features/43-javascript-code-addition-helper.html The module's homepage
  * @license   https://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
  */
 
@@ -91,7 +91,7 @@ class BlockCounterz extends Module
         ';
 
         $modulezUrl = 'https://prestashop.modulez.ru' . (Language::getIsoById($this->context->cookie->id_lang) === 'ru' ? '/ru/' : '/en/');
-        $modulePage = $modulezUrl . '43-block-counters.html';
+        $modulePage = $modulezUrl . '43-javascript-code-addition-helper.html';
         $output .= '
             <div class="panel">
                 <div class="panel-heading">
