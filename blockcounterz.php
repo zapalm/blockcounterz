@@ -87,12 +87,12 @@ class BlockCounterz extends Module
                     <center><input type="submit" name="submit_save" value="' . $this->l('Save') . '" class="button" /></center>
                 </fieldset>
             </form>
-            <br class="clear" />
         ';
 
         $modulezUrl = 'https://prestashop.modulez.ru' . (Language::getIsoById($this->context->cookie->id_lang) === 'ru' ? '/ru/' : '/en/');
         $modulePage = $modulezUrl . '43-javascript-code-addition-helper.html';
-        $output .= '
+        $output .=
+            (version_compare(_PS_VERSION_, '1.6', '<') ? '<br class="clear" />' : '') . '
             <div class="panel">
                 <div class="panel-heading">
                     <img src="' . $this->_path . 'logo.png" width="16" height="16"/>
@@ -111,8 +111,8 @@ class BlockCounterz extends Module
                         </div>
                     </div>
                 </div>
-            </div>
-            <br class="clear" />
+            </div> ' .
+            (version_compare(_PS_VERSION_, '1.6', '<') ? '<br class="clear" />' : '') . '
         ';
 
         return $output;
