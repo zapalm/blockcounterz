@@ -91,7 +91,7 @@ class BlockCounterz extends Module
 
         $modulezUrl = 'https://prestashop.modulez.ru' . (Language::getIsoById($this->context->cookie->id_lang) === 'ru' ? '/ru/' : '/en/');
         $modulePage = $modulezUrl . '43-javascript-code-addition-helper.html';
-        $output .=
+        $output .= // 2018-10-17
             (version_compare(_PS_VERSION_, '1.6', '<') ? '<br class="clear" />' : '') . '
             <div class="panel">
                 <div class="panel-heading">
