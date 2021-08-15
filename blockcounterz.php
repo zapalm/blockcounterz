@@ -117,7 +117,7 @@ class BlockCounterz extends Module
                             <span><b>' . $this->l('Version') . ':</b> ' . $this->version . '</span><br/>
                             <span><b>' . $this->l('License') . ':</b> ' . $licenseTitle . '</span><br/>
                             <span><b>' . $this->l('Website') . ':</b> <a class="link" href="' . $modulePage . '" target="_blank">prestashop.modulez.ru</a></span><br/>
-                            <span><b>' . $this->l('Author') . ':</b> ' . $this->author . ' <img src="https://prestashop.modulez.ru/img/zapalm24x24.jpg" alt="" /><br/><br/>
+                            <span><b>' . $this->l('Author') . ':</b> ' . $this->author . '</span><br/><br/>
                         </div>
                         <div class="form-group col-lg-2" style="display: block; clear: none !important; float: left; width: 16.6%;">
                             <img width="250" alt="' . $this->l('Website') . '" src="https://prestashop.modulez.ru/img/marketplace-logo.png" />
