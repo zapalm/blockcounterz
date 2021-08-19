@@ -78,7 +78,7 @@ class BlockCounterz extends Module
      */
     public function getContent()
     {
-        $output = '';
+        $output = (version_compare(_PS_VERSION_, '1.6', '>=') ? '' : '<h2>' . $this->displayName . '</h2>');
 
         if (Tools::isSubmit('submit_save')) {
             $content = base64_encode(trim(Tools::getValue('counters_text')));
