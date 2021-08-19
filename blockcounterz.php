@@ -13,7 +13,9 @@ if (!defined('_PS_VERSION_')) {
 }
 
 /**
- * @inheritdoc
+ * Module BlockCounterz.
+ *
+ * @author Maksim T. <zapalm@yandex.com>
  */
 class BlockCounterz extends Module
 {
@@ -25,6 +27,8 @@ class BlockCounterz extends Module
 
     /**
      * @inheritdoc
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
     public function __construct()
     {
@@ -41,6 +45,8 @@ class BlockCounterz extends Module
 
     /**
      * @inheritdoc
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
     public function install()
     {
@@ -59,6 +65,8 @@ class BlockCounterz extends Module
 
     /**
      * @inheritdoc
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
     public function uninstall()
     {
@@ -75,6 +83,8 @@ class BlockCounterz extends Module
      * Get module's settings page content.
      *
      * @return string
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
     public function getContent()
     {
@@ -133,6 +143,8 @@ class BlockCounterz extends Module
 
     /**
      * @inheritdoc
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
     public function hookHeader()
     {
@@ -141,6 +153,8 @@ class BlockCounterz extends Module
 
     /**
      * @inheritdoc
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
     public function hookRightColumn($params)
     {
@@ -157,6 +171,8 @@ class BlockCounterz extends Module
 
     /**
      * @inheritdoc
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
     public function hookLeftColumn($params)
     {
@@ -167,6 +183,8 @@ class BlockCounterz extends Module
 
     /**
      * @inheritdoc
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
     public function hookFooter($params)
     {
@@ -183,6 +201,8 @@ class BlockCounterz extends Module
 
     /**
      * Assign common variables.
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
     private function assignCommonVariables()
     {
