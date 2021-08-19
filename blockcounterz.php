@@ -100,9 +100,9 @@ class BlockCounterz extends Module
             </form>
         ';
 
-        // The block about the module (version: 2021-08-15)
+        // The block about the module (version: 2021-08-19)
         $modulezUrl    = 'https://prestashop.modulez.ru' . (Language::getIsoById(false === empty($GLOBALS['cookie']->id_lang) ? $GLOBALS['cookie']->id_lang : Context::getContext()->language->id) === 'ru' ? '/ru/' : '/en/');
-        $modulePage    = $modulezUrl . '43-javascript-code-addition-helper.html';
+        $modulePage    = $modulezUrl . self::HOMEPAGE_PRODUCT_ID . '-' . $this->name . '.html';
         $licenseTitle  = 'Academic Free License (AFL 3.0)';
         $output       .=
             (version_compare(_PS_VERSION_, '1.6', '<') ? '<br class="clear" />' : '') . '
