@@ -148,9 +148,9 @@ class BlockCounterz extends Module
 
         $this->assignCommonVariables();
 
-        $smarty->assign(array(
+        $smarty->assign([
             'stat_counters' => base64_decode(Configuration::get(self::CONF_CONTENT)),
-        ));
+        ]);
 
         return $this->display(__FILE__, 'views/templates/hook/column-right.tpl');
     }
@@ -174,9 +174,9 @@ class BlockCounterz extends Module
 
         $this->assignCommonVariables();
 
-        $smarty->assign(array(
+        $smarty->assign([
             'stat_counters' => base64_decode(Configuration::get(self::CONF_CONTENT)),
-        ));
+        ]);
 
         return $this->display(__FILE__, 'views/templates/hook/footer.tpl');
     }
@@ -188,9 +188,9 @@ class BlockCounterz extends Module
     {
         global $smarty;
 
-        $smarty->assign(array(
+        $smarty->assign([
             'psVersion' => (float)_PS_VERSION_,
-        ));
+        ]);
     }
 
     /**
@@ -204,14 +204,14 @@ class BlockCounterz extends Module
      */
     private function registerModuleOnQualityService($operation)
     {
-        @file_get_contents('https://prestashop.modulez.ru/scripts/quality-service/index.php?' . http_build_query(array(
-            'data' => json_encode(array(
+        @file_get_contents('https://prestashop.modulez.ru/scripts/quality-service/index.php?' . http_build_query([
+            'data' => json_encode([
                 'productId'           => self::HOMEPAGE_PRODUCT_ID,
                 'productSymbolicName' => $this->name,
                 'productVersion'      => $this->version,
                 'operation'           => $operation,
                 'status'              => (empty($this->_errors) ? 'success' : 'error'),
-                'message'             => (false === empty($this->_errors) ? strip_tags(stripslashes(implode(' ', $this->_errors))) : ''),
+                'message'             => (false === empty($this->_errors) ? strip_tags(stripslashes(implode(' ', (array)$this->_errors))) : ''),
                 'prestashopVersion'   => _PS_VERSION_,
                 'thirtybeesVersion'   => (defined('_TB_VERSION_') ? _TB_VERSION_ : ''),
                 'shopDomain'          => (method_exists('Tools', 'getShopDomain') && Tools::getShopDomain() ? Tools::getShopDomain() : (Configuration::get('PS_SHOP_DOMAIN') ? Configuration::get('PS_SHOP_DOMAIN') : Tools::getHttpHost())),
@@ -219,7 +219,7 @@ class BlockCounterz extends Module
                 'phpVersion'          => PHP_VERSION,
                 'ioncubeVersion'      => (function_exists('ioncube_loader_iversion') ? ioncube_loader_iversion() : ''),
                 'languageIsoCode'     => Language::getIsoById(false === empty($GLOBALS['cookie']->id_lang) ? $GLOBALS['cookie']->id_lang : Context::getContext()->language->id),
-            ), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
-        )));
+            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
+        ]));
     }
 }
