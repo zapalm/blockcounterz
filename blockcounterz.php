@@ -25,6 +25,9 @@ class BlockCounterz extends Module
     /** Settings option: content */
     const CONF_CONTENT = 'BLOCKCOUNTERZ_CONTENT';
 
+    /** @var string|null Footer content. */
+    private static $footerContent;
+
     /**
      * @inheritdoc
      *
@@ -56,6 +59,7 @@ class BlockCounterz extends Module
         $result = parent::install()
             && $this->registerHook('header')
             && $this->registerHook('footer')
+            && $this->registerHook('displayBeforeBodyClosingTag')
         ;
 
         $this->registerModuleOnQualityService('installation');
@@ -190,13 +194,27 @@ class BlockCounterz extends Module
     {
         global $smarty;
 
-        $this->assignCommonVariables();
+        if (null === static::$footerContent) {
+            $this->assignCommonVariables();
 
-        $smarty->assign([
-            'stat_counters' => base64_decode(Configuration::get(self::CONF_CONTENT)),
-        ]);
+            $smarty->assign([
+                'stat_counters' => base64_decode(Configuration::get(self::CONF_CONTENT)),
+            ]);
 
-        return $this->display(__FILE__, 'views/templates/hook/footer.tpl');
+            static::$footerContent = $this->display(__FILE__, 'views/templates/hook/footer.tpl');
+
+            return static::$footerContent;
+        }
+
+        return '';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function hookDisplayBeforeBodyClosingTag($params)
+    {
+        return $this->hookFooter($params);
     }
 
     /**
