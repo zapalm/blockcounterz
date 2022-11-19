@@ -37,7 +37,7 @@ class BlockCounterz extends Module
     {
         $this->name    = 'blockcounterz';
         $this->tab     = 'Blocks';
-        $this->version = '1.4.0';
+        $this->version = '1.5.0';
         $this->author  = 'zapalm';
 
         parent::__construct();
