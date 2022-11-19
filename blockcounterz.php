@@ -150,7 +150,7 @@ class BlockCounterz extends Module
      *
      * @author Maksim T. <zapalm@yandex.com>
      */
-    public function hookHeader()
+    public function hookHeader($params)
     {
         return '<link href="' . $this->_path . 'views/css/main.css" rel="stylesheet">';
     }
